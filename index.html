@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Pictures and images of all kinds of dogs"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>XMemes</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+      crossorigin="anonymous"
+    />
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+  </head>
+  <body>
+    <header class="text-center">
+      <h1>XMemes - Crio</h1>
+    </header>
+
+    <form
+      class="card mx-auto border-0 needs-validation"
+      style="width: 500px;"
+      id="postform"
+    >
+      <div class="mb-3">
+        <label for="nametxtBox" class="form-label">Name</label>
+        <input type="name" class="form-control" id="name" required />
+      </div>
+      <div class="mb-3">
+        <label for="imageurltxtBox" class="form-label">URL for the meme</label>
+        <input type="url" class="form-control" id="url" required />
+      </div>
+      <div class="mb-3">
+        <label for="captiontxtBox" class="form-label">Caption</label>
+        <input type="caption" class="form-control" id="caption" required />
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+    <br />
+    <div class="text-center">
+      <button class="btn btn-success mx-auto align-items-center" id="getMemes">
+        Display Memes
+      </button>
+    </div>
+
+    <div id="display-container"></div>
+    <div class="bg-modal">
+      <div class="modal-content">
+        <div class="close" id="closeButton">+</div>
+        <h3
+          style="
+            margin-top: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+            color: skyblue;
+          "
+        >
+          Change the caption or meme URL or both
+        </h3>
+        <form id="update-form" action="#">
+          <div
+            class="form-floating mb-3"
+            style="width: 450px; margin-left: 130px;"
+          >
+            <input
+              type="text"
+              class="form-control"
+              id="floatingInput"
+              placeholder="name@example.com"
+            />
+            <label for="floatingInput">Type new caption</label>
+          </div>
+          <div class="form-floating" style="width: 450px; margin-left: 130px;">
+            <input
+              type="url"
+              class="form-control"
+              id="floatingPassword"
+              placeholder="Password"
+            />
+            <label for="floatingPassword">Type new url</label>
+          </div>
+
+          <input
+            type="submit"
+            data-id=""
+            id="submit-edit"
+            onclick="edit()"
+            value="Edit Meme"
+            class="btn btn-success"
+            style="
+              margin-left: 300px;
+              margin-top: 20px;
+              color: red;
+              background-color: whitesmoke;
+              width: fit-content;
+            "
+          />
+        </form>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="index.js"></script>
+    <script src="editmeme.js"></script>
+  </body>
+</html>
