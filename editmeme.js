@@ -37,6 +37,7 @@ function edit() {
     if (xhr_patch.status == 200) {
       document.querySelector(".bg-modal").style.display = "none";
       document.getElementById("update-form").reset();
+      getMemes(100);
       return;
     } else if (xhr_patch.status == 404) {
       window.alert("Invalide URL !!! Please provide valid url.");

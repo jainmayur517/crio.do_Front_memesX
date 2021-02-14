@@ -2,8 +2,8 @@ $(document).ready(function () {
   function getOneMeme(object) {
     console.log(object.id);
     var image_id = object.id;
-    var meme_post = `<div class="card" style="width: 330px; height: 440px;">`;
-    meme_post += `<img src=${object.url} class="card-img-top" alt="meme">
+    var meme_post = `<div class="card" style="width: 330px; height: 480px;">`;
+    meme_post += `<img src=${object.url} class="card-img-top" style="align: center; height: 320px; width:320px" alt="meme">
       <div class="card-body">
         <h5 class="card-title">Posted By : ${object.name}</h5>
         <p class="card-text">Caption : ${object.caption}</p>
